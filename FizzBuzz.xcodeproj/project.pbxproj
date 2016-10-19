@@ -19,6 +19,8 @@
 		0EE6542B1DADCE5300C3A2D2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6542A1DADCE5300C3A2D2 /* Game.swift */; };
 		0EE6542D1DADEBF500C3A2D2 /* ViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6542C1DADEBF500C3A2D2 /* ViewControllerUnitTests.swift */; };
 		0EE654321DADFBD900C3A2D2 /* ViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE654301DADFBD900C3A2D2 /* ViewControllerUITests.swift */; };
+		22B477071DB71EC700516BCE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B477051DB71EC700516BCE /* Fabric.framework */; };
+		22B477081DB71EC700516BCE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B477061DB71EC700516BCE /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		0EE6542A1DADCE5300C3A2D2 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0EE6542C1DADEBF500C3A2D2 /* ViewControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerUnitTests.swift; path = ../FizzBuzzUITests/ViewControllerUnitTests.swift; sourceTree = "<group>"; };
 		0EE654301DADFBD900C3A2D2 /* ViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUITests.swift; sourceTree = "<group>"; };
+		22B477051DB71EC700516BCE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		22B477061DB71EC700516BCE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B477081DB71EC700516BCE /* Crashlytics.framework in Frameworks */,
+				22B477071DB71EC700516BCE /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +122,8 @@
 				0EE653FD1DADB77B00C3A2D2 /* Assets.xcassets */,
 				0EE653FF1DADB77B00C3A2D2 /* LaunchScreen.storyboard */,
 				0EE654021DADB77B00C3A2D2 /* Info.plist */,
+				22B477051DB71EC700516BCE /* Fabric.framework */,
+				22B477061DB71EC700516BCE /* Crashlytics.framework */,
 			);
 			path = FizzBuzz;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 				0EE653EC1DADB77B00C3A2D2 /* Sources */,
 				0EE653ED1DADB77B00C3A2D2 /* Frameworks */,
 				0EE653EE1DADB77B00C3A2D2 /* Resources */,
+				22B477041DB71EA300516BCE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -270,6 +279,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22B477041DB71EA300516BCE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run ***REMOVED*** ***REMOVED***";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0EE653EC1DADB77B00C3A2D2 /* Sources */ = {
@@ -435,6 +460,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FizzBuzz",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/FizzBuzz/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzz;
@@ -448,6 +477,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FizzBuzz",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/FizzBuzz/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzz;
