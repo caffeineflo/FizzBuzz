@@ -1,0 +1,3 @@
+git_url "https://github.com/evils/ios-certificates.git"
+
+type "adhoc" # The default type, can be: appstore, adhoc or development
