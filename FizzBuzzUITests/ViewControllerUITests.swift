@@ -15,14 +15,9 @@ class ViewControllerUITests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
+        setupSnapshot(XCUIApplication())
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
     override func tearDown() {
@@ -40,7 +35,7 @@ class ViewControllerUITests: XCTestCase {
         numberButton.tap()
         
         let newScore = numberButton.label
-        
+        snapshot("Score_02")
         XCTAssertEqual(newScore, "2")
         
     }
@@ -56,7 +51,7 @@ class ViewControllerUITests: XCTestCase {
         fizzButton.tap()
         
         let newScore = numberButton.label
-        
+        snapshot("Score_03")
         XCTAssertEqual(newScore, "3")
         
     }
@@ -75,7 +70,7 @@ class ViewControllerUITests: XCTestCase {
         buzzButton.tap() //5
         
         let newScore = numberButton.label
-        
+        snapshot("Score_05")
         XCTAssertEqual(newScore, "5")
     }
     
@@ -104,7 +99,7 @@ class ViewControllerUITests: XCTestCase {
         fizzBuzzButton.tap() //15
         
         let newScore = numberButton.label
-        
+        snapshot("Score_15")
         XCTAssertEqual(newScore, "15")
     }
     
