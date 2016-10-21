@@ -19,6 +19,7 @@
 		0EE6542B1DADCE5300C3A2D2 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6542A1DADCE5300C3A2D2 /* Game.swift */; };
 		0EE6542D1DADEBF500C3A2D2 /* ViewControllerUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE6542C1DADEBF500C3A2D2 /* ViewControllerUnitTests.swift */; };
 		0EE654321DADFBD900C3A2D2 /* ViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE654301DADFBD900C3A2D2 /* ViewControllerUITests.swift */; };
+		229FD6281DB94A9500A8BBE9 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FD6271DB94A9500A8BBE9 /* SnapshotHelper.swift */; };
 		22B477071DB71EC700516BCE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B477051DB71EC700516BCE /* Fabric.framework */; };
 		22B477081DB71EC700516BCE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B477061DB71EC700516BCE /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		0EE6542A1DADCE5300C3A2D2 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0EE6542C1DADEBF500C3A2D2 /* ViewControllerUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerUnitTests.swift; path = ../FizzBuzzUITests/ViewControllerUnitTests.swift; sourceTree = "<group>"; };
 		0EE654301DADFBD900C3A2D2 /* ViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUITests.swift; sourceTree = "<group>"; };
+		229FD6271DB94A9500A8BBE9 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		22B477051DB71EC700516BCE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		22B477061DB71EC700516BCE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				0EE654181DADB77B00C3A2D2 /* Info.plist */,
+				229FD6271DB94A9500A8BBE9 /* SnapshotHelper.swift */,
 				0EE654301DADFBD900C3A2D2 /* ViewControllerUITests.swift */,
 			);
 			path = FizzBuzzUITests;
@@ -158,7 +161,6 @@
 				0EE653EC1DADB77B00C3A2D2 /* Sources */,
 				0EE653ED1DADB77B00C3A2D2 /* Frameworks */,
 				0EE653EE1DADB77B00C3A2D2 /* Resources */,
-				22B477041DB71EA300516BCE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -211,14 +213,14 @@
 		0EE653E81DADB77B00C3A2D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = com.iflorian;
+				CLASSPREFIX = com.iFlorian;
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = iFlorian;
 				TargetAttributes = {
 					0EE653EF1DADB77B00C3A2D2 = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					0EE654061DADB77B00C3A2D2 = {
 						CreatedOnToolsVersion = 8.0;
@@ -280,22 +282,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		22B477041DB71EA300516BCE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run ***REMOVED*** ***REMOVED***";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		0EE653EC1DADB77B00C3A2D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -324,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE654321DADFBD900C3A2D2 /* ViewControllerUITests.swift in Sources */,
+				229FD6281DB94A9500A8BBE9 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +372,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -405,6 +392,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzz;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -448,6 +436,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzz;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -459,15 +448,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = DR3HWS5LMB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FizzBuzz",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/FizzBuzz/Info.plist";
+				INFOPLIST_FILE = FizzBuzz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "61fb23c9-5306-495e-a105-0c59ce18e967";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.iFlorian.FizzBuzz";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -476,15 +468,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = DR3HWS5LMB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FizzBuzz",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/FizzBuzz/Info.plist";
+				INFOPLIST_FILE = FizzBuzz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "768dc598-9da0-43ce-81ac-e002f5552e61";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.iFlorian.FizzBuzz";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -494,9 +489,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DR3HWS5LMB;
 				INFOPLIST_FILE = FizzBuzzTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzzTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FizzBuzz.app/FizzBuzz";
@@ -508,9 +504,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DR3HWS5LMB;
 				INFOPLIST_FILE = FizzBuzzTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzzTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FizzBuzz.app/FizzBuzz";
@@ -522,9 +519,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DR3HWS5LMB;
 				INFOPLIST_FILE = FizzBuzzUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzzUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -538,9 +536,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DR3HWS5LMB;
 				INFOPLIST_FILE = FizzBuzzUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iFlorian.FizzBuzzUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;

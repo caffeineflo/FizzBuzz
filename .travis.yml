@@ -1,4 +1,8 @@
 language: objective-c
 osx_image: xcode8
-xcode_project: FizzBuzz.xcodeproj
-xcode_scheme: FizzBuzz
+before_install:
+    - echo -e "machine github.com\n login ${GITHUB_TOKEN}" >> ~/.netrc
+    - gem install fastlane --no-ri --no-rdoc --no-document
+script:
+    - fastlane test
+    - if [ "${TRAVIS_BRANCH}" = "master" ]; then fastlane beta; fi
